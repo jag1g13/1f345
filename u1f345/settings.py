@@ -75,7 +75,7 @@ ROOT_URLCONF = 'u1f345.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR.joinpath('templates')],
+        'DIRS': [BASE_DIR.joinpath('u1f345', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

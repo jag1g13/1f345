@@ -3,6 +3,7 @@
 __pycache__/
 
 # Runtime & config
+/static/
 db.sqlite3
 settings.ini
 
