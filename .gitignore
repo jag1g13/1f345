@@ -1,0 +1,10 @@
+# Python
+/venv/
+__pycache__/
+
+# Runtime & config
+db.sqlite3
+settings.ini
+
+# IDEs
+/.vscode/
