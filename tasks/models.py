@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 from ckeditor.fields import RichTextField
 
@@ -11,6 +12,10 @@ class Project(models.Model):
     #: Name of the project
     name = models.CharField(max_length=255,
                             blank=False, null=False)
+
+    def get_absolute_url(self):
+        return reverse('tasks:project.detail', kwargs={'pk': self.pk})
+    
 
 
 class Task(models.Model):
@@ -34,3 +39,13 @@ class Task(models.Model):
 
     #: How the actual time once completed compared to the expected time
     time_difference = models.SmallIntegerField(blank=True, null=True)
+
+    #: Datetime at which the task was added
+    added_at = models.DateTimeField(auto_now_add=True,
+                                    blank=True, null=False)
+
+    #: Datetime at which the task was completed
+    completed_at = models.DateTimeField(blank=True, null=True)
+
+    def get_absolute_url(self):
+        return reverse('tasks:task.detail', kwargs={'pk': self.pk})

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block bootstrap4_content %}
+    <table class="table table-borderless">
+        <thead>
+
+            <tr>
+                <th>Description</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for task in tasks %}
+                <tr>
+                    <td>{{ task.description }}</td>
+                </tr>
+
+            {% empty %}
+                <tr>
+                    <td>No tasks</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -49,6 +49,7 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     'bootstrap4',
+    'ckeditor',
     'constance',
     'constance.backends.database',
 ]
