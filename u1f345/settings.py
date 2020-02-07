@@ -55,6 +55,7 @@ THIRD_PARTY_APPS = [
 
 FIRST_PARTY_APPS = [
     'profiles',
+    'tasks',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + FIRST_PARTY_APPS
@@ -168,11 +169,19 @@ STATICFILES_DIRS = [
 
 CONSTANCE_CONFIG = collections.OrderedDict([
     ('NOTICE_TEXT', ('', 'Text displayed in notice banner')),
-    ('NOTICE_CLASS', ('', 'CSS class applied to notice banner alert')),
+    ('NOTICE_CLASS', ('bg-warning', 'CSS class applied to notice banner alert')),
+    # TODO use actual unicode character here
+    ('DEFAULT_TIME_UNIT', ('u1f345', 'Time unit used where user has not set a custom preference'))
 ])
 
 CONSTANCE_CONFIG_FIELDSETS = {
-    'Notice Banner': ('NOTICE_TEXT', 'NOTICE_CLASS'),
+    'Notice Banner': (
+        'NOTICE_TEXT',
+        'NOTICE_CLASS',
+    ),
+    'Units': (
+        'DEFAULT_TIME_UNIT',
+    ),
 }
 
 CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'

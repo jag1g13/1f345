@@ -19,4 +19,4 @@ class User(AbstractUser):
         """
         Get the time units used by this user.
         """
-        return self.time_units or settings['DEFAULT_TIME_UNIT']
+        return self.time_units or settings.DEFAULT_TIME_UNIT
